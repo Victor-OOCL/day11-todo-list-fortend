@@ -9,6 +9,7 @@ import {
   todoReducer
 } from "./context/todoReducer";
 import Generator from './components/Generator';
+import styles from './Todo.css'
 
 export const TodoContext = createContext();
 
@@ -21,8 +22,9 @@ function App () {
         state,
         dispatch
       }}>
-        <TodoList/>
+        <span className='title'>Todo List</span>
         <Generator/>
+        <TodoList/>
       </TodoContext.Provider>
     </div>
   );

@@ -5,7 +5,7 @@ export const initialState = [
     done: false
   },
   {
-    id: Date.now(),
+    id: Date.now() + 1,
     text: "the second todo",
     done: false
   },
@@ -23,14 +23,16 @@ export const todoReducer = (state, action) => {
         }
       ];
     case 'DONE':
-      return state.map((todo, index) =>
-        index === action.payload
+      return state.map((todo) =>
+        todo.id === action.payload
           ? {
             ...todo,
             done: !todo.done
           }
           : todo
       );
+    case 'DELETE':
+      return state.filter(todo => todo.id !== action.payload);
   }
   return state;
 };
