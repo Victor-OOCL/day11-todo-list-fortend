@@ -23,8 +23,8 @@ function App () {
         dispatch
       }}>
         <span className='title'>Todo List</span>
-        <Generator/>
         <TodoList/>
+        <Generator/>
       </TodoContext.Provider>
     </div>
   );
