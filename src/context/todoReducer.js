@@ -2,7 +2,7 @@ export const initialState = [
   {
     id: Date.now(),
     text: "the first todo",
-    done: false
+    done: true
   },
   {
     id: Date.now() + 1,

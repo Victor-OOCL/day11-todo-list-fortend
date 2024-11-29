@@ -18,3 +18,7 @@
     height: 30px;
 }
 
+.done {
+    text-decoration: line-through;
+}
+

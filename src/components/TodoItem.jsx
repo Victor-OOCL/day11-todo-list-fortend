@@ -1,9 +1,7 @@
 import {
   useContext,
-  useState
 } from 'react';
 import {TodoContext} from '../App';
-import styles from '../Todo.css';
 
 const TodoItem = (props) => {
   const {
@@ -27,7 +25,7 @@ const TodoItem = (props) => {
 
   return (
     <div>
-      <span className={`todo-item ${todoItem.done ? 'line-through' : 'none'}`} onClick={handleDone}>{todoItem.text}</span>
+      <span className={todoItem.done? 'done':''} onClick={handleDone}>{todoItem.text}</span>
       <button onClick={handleDelete}>X</button>
     </div>
   )

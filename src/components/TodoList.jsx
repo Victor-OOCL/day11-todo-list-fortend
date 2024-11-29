@@ -3,12 +3,13 @@ import {useContext} from 'react';
 import {TodoContext} from '../App';
 import NoteItem from './NoteItem';
 import Generator from './Generator';
+import styles from '../Todo.css'
 
 const TodoList = () => {
   const {state} = useContext(TodoContext)
   return (
     <div>
-      <span className='title'>Todo List</span>
+      <div className='title'>Todo List</div>
       {state.length === 0 ? <NoteItem/> : <TodoGroup/>}
       <Generator/>
     </div>
