@@ -9,7 +9,13 @@ import {
   todoReducer
 } from "./context/todoReducer";
 import Generator from './components/Generator';
-import styles from './Todo.css'
+import {
+  Route,
+  BrowserRouter as Router,
+  Routes,
+  Navigate
+} from 'react-router-dom';
+import NotFound from './components/NotFound';
 
 export const TodoContext = createContext();
 
@@ -22,9 +28,13 @@ function App () {
         state,
         dispatch
       }}>
-        <span className='title'>Todo List</span>
-        <TodoList/>
-        <Generator/>
+      <Router>
+        <Routes>
+          <Route path={"/todo-list"} element={<TodoList/>}></Route>
+          <Route path={"/"} element={<Navigate to={"/todo-list"}/>}></Route>
+          <Route path={"*"} element={<NotFound/>}></Route>
+        </Routes>
+      </Router>
       </TodoContext.Provider>
     </div>
   );
