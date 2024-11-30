@@ -13,7 +13,8 @@ import {
   Route,
   BrowserRouter as Router,
   Routes,
-  Navigate
+  Navigate,
+  Link
 } from 'react-router-dom';
 import NotFound from './components/NotFound';
 import DoneList from './components/DoneList';
@@ -30,14 +31,27 @@ function App () {
         state,
         dispatch
       }}>
-      <Router>
-        <Routes>
-          <Route path={"/todo-list"} element={<Todo/>}></Route>
-          <Route path={"/done-list"} element={<DoneList/>}></Route>
-          <Route path={"/"} element={<Navigate to={"/todo-list"}/>}></Route>
-          <Route path={"*"} element={<NotFound/>}></Route>
-        </Routes>
-      </Router>
+        <Router>
+          <nav>
+            <ul className={'navbar'}>
+              <li className={'navItem'}>
+                <Link to="/todo-list" className={'navLink'}>Todo List</Link>
+              </li>
+              <li className={'navItem'}>
+                <Link to="/done-list" className={'navLink'}>Done List</Link>
+              </li>
+              <li className={'navItem'}>
+                <Link to="/help" className={'navLink'}>Help</Link>
+              </li>
+            </ul>
+          </nav>
+          <Routes>
+            <Route path={"/todo-list"} element={<Todo/>}></Route>
+            <Route path={"/done-list"} element={<DoneList/>}></Route>
+            <Route path={"/"} element={<Navigate to={"/todo-list"}/>}></Route>
+            <Route path={"*"} element={<NotFound/>}></Route>
+          </Routes>
+        </Router>
       </TodoContext.Provider>
     </div>
   );
