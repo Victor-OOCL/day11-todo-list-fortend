@@ -3,7 +3,7 @@ import {useContext} from 'react';
 import {TodoContext} from '../App';
 import NoteItem from './NoteItem';
 import Generator from './Generator';
-
+import { Pagination } from 'antd';
 
 const TodoList = () => {
   const {state} = useContext(TodoContext)
@@ -11,8 +11,8 @@ const TodoList = () => {
   return (
     <div>
       <div className='title'>Todo List</div>
-      {state.length === 0 ? <NoteItem/> : <TodoGroup/>}
       <Generator/>
+      {state.length === 0 ? <NoteItem/> : <TodoGroup/>}
     </div>
   )
 }
