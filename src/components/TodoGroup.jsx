@@ -14,7 +14,7 @@ const TodoGroup = () => {
   const [current, setCurrent] = useState(1);  // 当前页
   const total = todoList.length;
   const [pageSize, setPageSize] = useState(5);
-  const currentData = todoList.slice((current-1)*pageSize, current*pageSize);
+  const currentData = todoList.slice((current - 1) * pageSize, current * pageSize);
   const onPageChange = (page) => {
     setCurrent(page);
   };
@@ -29,15 +29,24 @@ const TodoGroup = () => {
       {currentData.map((item) => {
         return <TodoItem key={item.id} todoItem={item}/>
       })}
-      <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
+      <div style={{
+        display: 'flex',
+        justifyContent: 'center',
+        marginTop: '20px'
+      }}>
         <Pagination
-          size="small"
+          size='small'
           total={total}
           showTotal={showTotal}
           pageSize={pageSize}
           onChange={onPageChange}
           onShowSizeChange={onPageSizeChange}
-          pageSizeOptions={['5', '10', '15', '20']}
+          pageSizeOptions={[
+            '5',
+            '10',
+            '15',
+            '20'
+          ]}
           showSizeChanger
           showQuickJumper
         />

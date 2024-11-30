@@ -3,7 +3,6 @@ import {useContext} from 'react';
 import {TodoContext} from '../App';
 import NoteItem from './NoteItem';
 import Generator from './Generator';
-import { Pagination } from 'antd';
 
 const TodoList = () => {
   const {state} = useContext(TodoContext)

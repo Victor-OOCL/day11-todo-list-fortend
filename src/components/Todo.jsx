@@ -9,7 +9,7 @@ import TodoList from './TodoList';
 import {Spin} from 'antd';
 
 const Todo = () => {
-  const [loading,setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
   const {dispatch} = useContext(TodoContext);
 
   useEffect(() => {
@@ -20,12 +20,12 @@ const Todo = () => {
           payload: todos
         })
       }
-    ).finally(()=>{
+    ).finally(() => {
       setLoading(true);
     });
-  },[]);
-  return(<div>
-    {loading?<TodoList/>:<Spin/>}
+  }, []);
+  return (<div>
+    {loading ? <TodoList/> : <Spin/>}
   </div>)
 }
 export default Todo
