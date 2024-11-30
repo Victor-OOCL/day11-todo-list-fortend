@@ -1,26 +1,14 @@
 export const initialState = [
-  {
-    id: Date.now(),
-    text: "the first todo",
-    done: true
-  },
-  {
-    id: Date.now() + 1,
-    text: "the second todo",
-    done: false
-  },
 ];
 
 export const todoReducer = (state, action) => {
   switch (action.type) {
+    case 'INIT':
+      return action.payload
     case 'ADD':
       return [
         ...state,
-        {
-          id: Date.now(),
-          text: action.payload,
-          done: false
-        }
+        action.payload
       ];
     case 'DONE':
       return state.map((todo) =>

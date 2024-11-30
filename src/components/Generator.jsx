@@ -3,16 +3,19 @@ import {
   useState
 } from 'react';
 import {TodoContext} from '../App';
+import {addTodo} from '../api/todo';
 
 const Generator = () => {
   const {dispatch} = useContext(TodoContext);
   const [text, setText] = useState("")
 
-  function handleAdd () {
+  function handleAdd (){
     if (text.trim() !== '') {
-      dispatch({
-        type: "ADD",
-        payload: text
+      addTodo({text, done: false}).then((todo) => {
+        dispatch({
+          type: 'ADD',
+          payload: todo
+        })
       })
     }
   }

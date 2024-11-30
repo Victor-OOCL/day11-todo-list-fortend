@@ -8,7 +8,7 @@ import {
   initialState,
   todoReducer
 } from "./context/todoReducer";
-import Generator from './components/Generator';
+
 import {
   Route,
   BrowserRouter as Router,
