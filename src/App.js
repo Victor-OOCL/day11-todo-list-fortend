@@ -17,6 +17,7 @@ import {
 } from 'react-router-dom';
 import NotFound from './components/NotFound';
 import DoneList from './components/DoneList';
+import Todo from './components/Todo';
 
 export const TodoContext = createContext();
 
@@ -31,7 +32,7 @@ function App () {
       }}>
       <Router>
         <Routes>
-          <Route path={"/todo-list"} element={<TodoList/>}></Route>
+          <Route path={"/todo-list"} element={<Todo/>}></Route>
           <Route path={"/done-list"} element={<DoneList/>}></Route>
           <Route path={"/"} element={<Navigate to={"/todo-list"}/>}></Route>
           <Route path={"*"} element={<NotFound/>}></Route>
