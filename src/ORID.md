@@ -1,20 +1,20 @@
-### **O: Objective**
-- Learned **React lifecycle**, **useContext**, and **useReducer**.
-- Completed a **To-Do List** exercise.
-- Attended a **Design Pattern** session.
-- Held a **retrospective meeting** to reflect on the past week.
+## O - **Objective**:
+Today, I learned:
+1. How to use `react-router` for routing and component switching.
+2. How to make HTTP requests with `axios`.
+3. How to use Ant Design components like `Button`, `Modal`, and `Input`.
 
-### **R: Reflective**
-- Felt good about completing the To-Do List and using new hooks.
-- The Design Pattern session was informative but challenging.
-- The retrospective was helpful for reflecting on team progress.
+## R - **Reflective**:
+- React Router makes navigation in SPAs smooth without page reloads.
+- Axios simplifies making HTTP requests and handling errors.
+- Ant Design speeds up UI development with ready-to-use components.
 
-### **I: Interpretive**
-- Gained a better understanding of **state management** in React.
-- Realized how **design patterns** help with software architecture.
-- Reflecting regularly improves both team and personal growth.
+## I - **Interpretive**:
+- React Router is key for building dynamic SPAs with smooth navigation.
+- Axios is a better tool for async requests compared to `fetch`.
+- Ant Design helps create consistent, responsive UIs quickly.
 
-### **D: Decisional**
-- Keep practicing **useContext** and **useReducer**.
-- Focus on mastering **design patterns**.
-- Implement regular **retrospectives** in future projects.
+## D - **Decisional**:
+- I'll dive deeper into React Router's advanced features.
+- I'll explore Axios interceptors and error handling.
+- I'll use more Ant Design components to streamline UI development.
