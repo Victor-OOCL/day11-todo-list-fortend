@@ -17,6 +17,26 @@
     width: 200px;
     height: 30px;
 }
+button{
+    font-size: 18px;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    border-color: #f4f4f4;
+    display: inline-block;
+    align-items: center;
+}
+input{
+    font-size: 18px;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    display: inline-block;
+    align-items: center;
+}
+
 .done {
     text-decoration: line-through;
 }
