@@ -5,7 +5,6 @@ import {
 import {TodoContext} from '../App';
 import {
   deleteTodo,
-  doneTodo,
   updateTodo
 } from '../api/todo';
 import styles from '../Todo.css'
@@ -18,6 +17,7 @@ const TodoItem = (props) => {
   const {dispatch} = useContext(TodoContext);
   const [text, setText] = useState(props.todoItem.text)
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [disable, setDisable] = useState(false);
 
   const showModal = () => {
     setIsModalOpen(true);
@@ -39,13 +39,14 @@ const TodoItem = (props) => {
   };
 
   function handleDone () {
-    doneTodo(todoItem.id, {
+    setDisable(true);
+    updateTodo(todoItem.id, {
       ...todoItem,
-      done: true
+      done: !todoItem.done
     }).then((todo) => {
       dispatch({
-        type: 'DONE',
-        payload: todo.id
+        type: 'UPDATE',
+        payload: todo
       })
     })
   }
@@ -66,7 +67,7 @@ const TodoItem = (props) => {
   return (
     <div>
       <div className={'todo-item'}>
-        <span className={todoItem.done ? 'done' : ''} onClick={handleDone}>{todoItem.text}</span>
+        <span className={todoItem.done ? 'done' : ''} onClick={handleDone} disable={disable}>{todoItem.text}</span>
         <FormOutlined type='primary' onClick={showModal}/>
       </div>
       <button onClick={handleDelete}>X</button>
